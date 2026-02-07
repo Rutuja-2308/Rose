@@ -16,10 +16,17 @@
     color: #ff4d6d;
   }
 
-  .text-screen {
-    font-size: 28px;
-    cursor: pointer;
+  .screen {
     text-align: center;
+    display: none;
+  }
+
+  .active {
+    display: block;
+  }
+
+  .clickable {
+    cursor: pointer;
     animation: pulse 1.5s infinite;
   }
 
@@ -29,12 +36,7 @@
     100% { opacity: 0.6; }
   }
 
-  .rose-screen {
-    display: none;
-    text-align: center;
-  }
-
-  .rose-screen img {
+  img {
     width: 360px;
     border-radius: 18px;
     box-shadow: 0 0 40px rgba(255, 0, 80, 0.4);
@@ -43,28 +45,54 @@
   .love-text {
     margin-top: 18px;
     font-size: 24px;
+    cursor: pointer;
+  }
+
+  .message {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ffd6e0;
   }
 </style>
 </head>
 
 <body>
 
-  <!-- FIRST SCREEN -->
-  <div class="text-screen" onclick="showRose()">
-    Happy Rose Day 🌹<br>
-    My Husband ❤️
-  </div>
+<!-- SCREEN 1 -->
+<div class="screen active clickable" id="screen1" onclick="showRose()">
+  Happy Rose Day 🌹<br>
+  My Husband ❤️
+</div>
 
-  <!-- SECOND SCREEN -->
-  <div class="rose-screen" id="rose">
-    <img src="rose.jpg" alt="Rose">
-    <div class="love-text">I love you ❤️</div>
+<!-- SCREEN 2 -->
+<div class="screen" id="screen2">
+  <img src="rose.jpg" alt="Rose">
+  <div class="love-text clickable" onclick="showMessage()">
+    I love you ❤️
   </div>
+</div>
+
+<!-- SCREEN 3 -->
+<div class="screen" id="screen3">
+  <div class="message">
+    <!-- ✨ REPLACE THESE LINES WITH YOUR OWN ✨ -->
+    You are my strength and my happiness.<br>
+    Every day with you feels special.<br>
+    Thank you for loving me the way you do.<br>
+    Forever yours ❤️
+  </div>
+</div>
 
 <script>
   function showRose() {
-    document.querySelector('.text-screen').style.display = 'none';
-    document.getElementById('rose').style.display = 'block';
+    document.getElementById("screen1").classList.remove("active");
+    document.getElementById("screen2").classList.add("active");
+  }
+
+  function showMessage() {
+    document.getElementById("screen2").classList.remove("active");
+    document.getElementById("screen3").classList.add("active");
   }
 </script>
 
