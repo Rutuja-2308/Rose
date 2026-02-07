@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Rose Day ❤️</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle, #1a1a1a, #000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: #ff4d6d;
+  }
+
+  .text-screen {
+    font-size: 28px;
+    cursor: pointer;
+    text-align: center;
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+  }
+
+  .rose-screen {
+    display: none;
+    text-align: center;
+  }
+
+  .rose-screen img {
+    width: 360px;
+    border-radius: 18px;
+    box-shadow: 0 0 40px rgba(255, 0, 80, 0.4);
+  }
+
+  .love-text {
+    margin-top: 18px;
+    font-size: 24px;
+  }
+</style>
+</head>
+
+<body>
+
+  <!-- FIRST SCREEN -->
+  <div class="text-screen" onclick="showRose()">
+    Happy Rose Day 🌹<br>
+    My Husband ❤️
+  </div>
+
+  <!-- SECOND SCREEN -->
+  <div class="rose-screen" id="rose">
+    <img src="rose.jpg" alt="Rose">
+    <div class="love-text">I love you ❤️</div>
+  </div>
+
+<script>
+  function showRose() {
+    document.querySelector('.text-screen').style.display = 'none';
+    document.getElementById('rose').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
